@@ -93,8 +93,9 @@ class TypeGenerator:
                                  value = str(elem.upperLimit)+'u'
                               else:
                                  value = str(elem.upperLimit)
-                              lines1.append('#define RTE_CONST_%s (%s)'%(elem.textValue,value))
-                              lines2.append('#define %s ((%s)%s)'%(elem.textValue,typename,value))
+                              if elem.textValue is not None:
+                                 lines1.append('#define RTE_CONST_%s (%s)'%(elem.textValue,value))
+                                 lines2.append('#define %s ((%s)%s)'%(elem.textValue,typename,value))
                         if len(lines2)>0:
                            tmp=lines1+[C.blank()]+lines2
                         else:
