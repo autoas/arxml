@@ -87,8 +87,8 @@ class TypeGenerator:
                      if compuMethod is not None:
                         lines1=[]
                         lines2=[]
-                        if isinstance(compuMethod,autosar.datatype.CompuMethodConst):
-                           for elem in compuMethod.elements:
+                        if isinstance(compuMethod,autosar.datatype.CompuMethod):
+                           for elem in compuMethod.intToPhys.elements:
                               if isUnsigned:
                                  value = str(elem.upperLimit)+'u'
                               else:

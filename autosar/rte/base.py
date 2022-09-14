@@ -228,8 +228,8 @@ class RteTypeManager:
       for dataType in self.typeMap.values():
          if isinstance(dataType, autosar.datatype.RecordDataType) or isinstance(dataType, autosar.datatype.ArrayDataType):
             complexTypes.add(dataType.ref)
-         elif isinstance(dataType, autosar.portinterface.ModeDeclarationGroup):
-            modeTypes.add(dataType.ref)
+         # elif isinstance(dataType, autosar.portinterface.ModeDeclarationGroup):
+         #    modeTypes.add(dataType.ref)
          else:
             basicTypes.add(dataType.ref)
       return list(basicTypes),list(complexTypes),list(modeTypes)
